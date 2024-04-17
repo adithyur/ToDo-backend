@@ -11,7 +11,6 @@ function connectToMongoDB() {
   });
 }
 
-// Export the function for use in other files
 module.exports = {
   connectToMongoDB
 };
