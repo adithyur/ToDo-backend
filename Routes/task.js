@@ -65,7 +65,20 @@ router.get('/pending/:userid', async (req, res) => {
     }
 });
 
-
+router.delete('/taskdelete/:taskId', async(req, res) => {
+  const { taskId } = req.params;
+  try {
+    const deletedTask = await Task.findByIdAndDelete(taskId);
+  
+    if (!deletedTask) {
+        return res.status(404).json({ message: 'Task not found' });
+    }
+  
+    res.status(200).json({ message: 'Task deleted successfully.' });
+} catch (error) {
+    res.status(500).json({ message: error.message });
+}
+});
 
   router.get('/completed/:userid', async (req, res) => {
     const { userid } = req.params;

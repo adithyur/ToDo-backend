@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Function to establish MongoDB connection
 function connectToMongoDB() {
   const uri = "mongodb+srv://kl61altoboy:Y5drAuRWLvWKy53L@todo.xww519t.mongodb.net/?retryWrites=true&w=majority&appName=ToDo";
   mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
